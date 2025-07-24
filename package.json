@@ -1,5 +1,5 @@
 {
-  "name": "@neo-ui/icons",
+  "name": "neo-ui-icons",
   "version": "1.0.0",
   "type": "module",
   "description": "A collection of Neo UI SVG icons for modern web applications",
@@ -81,5 +81,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
-} 
+  },
+
+}

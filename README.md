@@ -1,4 +1,4 @@
-# @neo-ui/icons
+# neo-ui-icons
 
 A collection of Neo UI SVG icons for modern web applications. This package provides React and Vue components, as well as raw SVG files for maximum flexibility.
 
@@ -15,11 +15,11 @@ A collection of Neo UI SVG icons for modern web applications. This package provi
 ## Installation
 
 ```bash
-npm install @neo-ui/icons
+npm install neo-ui-icons
 # or
-yarn add @neo-ui/icons
+yarn add neo-ui-icons
 # or
-pnpm add @neo-ui/icons
+pnpm add neo-ui-icons
 ```
 
 ## Available Icons
@@ -49,7 +49,7 @@ pnpm add @neo-ui/icons
 ### React Components
 
 ```tsx
-import { BinaryCode, CodeAgent, Icon } from '@neo-ui/icons/react';
+import { BinaryCode, CodeAgent, Icon } from 'neo-ui-icons/react';
 
 function App() {
   return (
@@ -80,26 +80,26 @@ function App() {
 </template>
 
 <script setup lang="ts">
-import { BinaryCode, CodeAgent, Icon } from '@neo-ui/icons/vue';
+import { BinaryCode, CodeAgent, Icon } from 'neo-ui-icons/vue';
 </script>
 ```
 
 ### Raw SVG Files
 
 ```tsx
-import { BinaryCode } from '@neo-ui/icons';
+import { BinaryCode } from 'neo-ui-icons';
 
 // Use as image source
 <img src={BinaryCode} alt="Binary Code" />
 
 // Or import directly
-import binaryCodeSvg from '@neo-ui/icons/svg/BinaryCode.svg';
+import binaryCodeSvg from 'neo-ui-icons/svg/BinaryCode.svg';
 ```
 
 ### Programmatic Usage
 
 ```tsx
-import { iconNames, getIconByName, IconName } from '@neo-ui/icons';
+import { iconNames, getIconByName, IconName } from 'neo-ui-icons';
 
 // Get all available icon names
 console.log(iconNames);
@@ -137,7 +137,7 @@ The `Icon` component accepts an additional `name` prop:
 ### TypeScript Types
 
 ```tsx
-import type { IconName, IconProps } from '@neo-ui/icons/react';
+import type { IconName, IconProps } from 'neo-ui-icons/react';
 
 // IconName is a union type of all available icon names
 const iconName: IconName = 'BinaryCode'; // ✅ Valid
@@ -174,7 +174,7 @@ const props: IconProps = {
 ### Conditional Rendering
 
 ```tsx
-import { Icon, iconNames } from '@neo-ui/icons/react';
+import { Icon, iconNames } from 'neo-ui-icons/react';
 
 function IconSelector({ selectedIcon }: { selectedIcon: IconName }) {
   return (
