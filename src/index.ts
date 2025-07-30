@@ -65,6 +65,9 @@ export const iconNames = [
   'WhiteRabbit',
 ] as const;
 
+// Export motion components
+export * from './motion';
+
 export type IconName = typeof iconNames[number];
 
 // Utility function to get icon by name

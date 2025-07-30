@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neo UI Motion Components Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 2rem;
+    }
+    
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .demo-item {
+      background: #2a2a2a;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .icon-container {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+    }
+    
+    /* MatrixCube Rotating Animation */
+    @keyframes matrix-cube-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .matrix-cube-rotating {
+      transform-origin: center;
+      animation: matrix-cube-rotate 5s linear infinite;
+    }
+    
+
+    
+
+    
+    /* CodeAgent Typing Animation */
+    @keyframes code-agent-typing {
+      0% { 
+        transform: scale(1);
+        filter: brightness(1);
+      }
+      25% { 
+        transform: scale(1.02);
+        filter: brightness(1.1);
+      }
+      50% { 
+        transform: scale(1);
+        filter: brightness(1);
+      }
+      75% { 
+        transform: scale(1.02);
+        filter: brightness(1.1);
+      }
+      100% { 
+        transform: scale(1);
+        filter: brightness(1);
+      }
+    }
+    
+    .code-agent-typing {
+      transform-origin: center;
+      animation: code-agent-typing 2s ease-in-out infinite;
+    }
+    
+    /* BinaryCode Flashing Animation */
+    @keyframes binary-code-flashing {
+      0% { 
+        transform: scale(1);
+        opacity: 1;
+      }
+      25% { 
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+      50% { 
+        transform: scale(1);
+        opacity: 1;
+      }
+      75% { 
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+      100% { 
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+          @keyframes binary-code-glow {
+        0% { 
+          filter: drop-shadow(0 0 0.5px #00FF85) drop-shadow(0 0 1px #00FF85);
+        }
+        50% { 
+          filter: drop-shadow(0 0 2px #00FF85) drop-shadow(0 0 4px #00FF85);
+        }
+        100% { 
+          filter: drop-shadow(0 0 0.5px #00FF85) drop-shadow(0 0 1px #00FF85);
+        }
+      }
+    
+    .binary-code-flashing {
+      transform-origin: center;
+      animation: binary-code-flashing 1.5s ease-in-out infinite, binary-code-glow 1.5s ease-in-out infinite;
+    }
+    
+    /* WhiteRabbit Hopping Animation */
+    @keyframes white-rabbit-hop {
+      0% { transform: translateY(0px) rotate(0deg); }
+      20% { transform: translateY(-2px) rotate(-2deg); }
+      40% { transform: translateY(-8px) rotate(-1deg); }
+      60% { transform: translateY(-6px) rotate(0deg); }
+      80% { transform: translateY(-2px) rotate(1deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    
+    .white-rabbit-hopping {
+      transform-origin: center;
+      animation: white-rabbit-hop 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    
+
+    
+    svg {
+      width: 64px;
+      height: 64px;
+      color: currentColor;
+    }
+    
+    .small {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1 style="text-align: center; margin-bottom: 3rem;">
+      Neo UI Motion Components Demo
+    </h1>
+    
+    <div class="demo-grid">
+      
+      <!-- MatrixCube Rotating -->
+      <div class="demo-item">
+        <h3>MatrixCube Rotating</h3>
+        <div class="icon-container">
+          <svg class="matrix-cube-rotating" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16V8.00002C20.9996 7.6493 20.9071 7.30483 20.7315 7.00119C20.556 6.69754 20.3037 6.44539 20 6.27002L13 2.27002C12.696 2.09449 12.3511 2.00208 12 2.00208C11.6489 2.00208 11.304 2.09449 11 2.27002L4 6.27002C3.69626 6.44539 3.44398 6.69754 3.26846 7.00119C3.09294 7.30483 3.00036 7.6493 3 8.00002V16C3.00036 16.3508 3.09294 16.6952 3.26846 16.9989C3.44398 17.3025 3.69626 17.5547 4 17.73L11 21.73C11.304 21.9056 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9056 13 21.73L20 17.73C20.3037 17.5547 20.556 17.3025 20.7315 16.9989C20.9071 16.6952 20.9996 16.3508 21 16Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.5 4.20996L12 6.80996L16.5 4.20996" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.5 19.79V14.6L3 12" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12L16.5 14.6V19.79" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.27002 6.95996L12 12.01L20.73 6.95996" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 22.08V12" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Continuous rotation with customizable speed and direction</p>
+      </div>
+
+
+
+
+
+
+
+      <!-- BinaryCode Flashing -->
+      <div class="demo-item">
+        <h3>BinaryCode Flashing</h3>
+        <div class="icon-container">
+          <svg class="binary-code-flashing" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Binary 1s - filled rectangles -->
+            <rect x="15" y="15" width="2" height="4" fill="#00FF85"/>
+            <rect x="7" y="5" width="2" height="4" fill="#00FF85"/>
+            
+            <!-- Binary 0s - stroke paths with white fill -->
+            <path d="M18 16C18 14.8954 17.1046 14 16 14C14.8954 14 14 14.8954 14 16V18C14 19.1046 14.8954 20 16 20C17.1046 20 18 19.1046 18 18V16Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+            <path d="M10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6V8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8V6Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+            
+            <!-- Connecting lines -->
+            <path d="M6 20H10" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 10H18" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 14H8V20" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 4H16V10" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Binary data processing with glow effect</p>
+      </div>
+
+      <!-- WhiteRabbit Hopping -->
+      <div class="demo-item">
+        <h3>WhiteRabbit Hopping</h3>
+        <div class="icon-container">
+          <svg class="white-rabbit-hopping" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="18" y1="3" x2="18" y2="7" stroke="#00FF85" stroke-width="2"/>
+            <path d="M13 16C13.5795 15.9992 14.1467 16.1663 14.6333 16.481C15.1198 16.7958 15.5048 17.2446 15.7417 17.7735C15.9787 18.3023 16.0573 18.8884 15.9683 19.461C15.8793 20.0336 15.6263 20.5681 15.24 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 12H18.01" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 21H10C8.93913 21 7.92172 20.5786 7.17157 19.8285C6.42143 19.0783 6 18.0609 6 17C6 15.1435 6.7375 13.363 8.05025 12.0503C9.36301 10.7375 11.1435 10 13 10H13.2L9.6 6.40004C9.41615 6.21619 9.27031 5.99793 9.17081 5.75772C9.07131 5.5175 9.0201 5.26004 9.0201 5.00004C9.0201 4.47494 9.2287 3.97134 9.6 3.60004C9.9713 3.22874 10.4749 3.02014 11 3.02014C11.26 3.02014 11.5175 3.07135 11.7577 3.17085C11.9979 3.27035 12.2161 3.41619 12.4 3.60004L15.8 7.00004H16C19.3 7.00004 22 9.70004 22 13V14C22 14.5305 21.7893 15.0392 21.4142 15.4143C21.0391 15.7893 20.5304 16 20 16H19C18.2044 16 17.4413 16.3161 16.8787 16.8787C16.3161 17.4413 16 18.2044 16 19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 8.54V4C20 3.46957 19.7893 2.96086 19.4142 2.58579C19.0391 2.21071 18.5304 2 18 2C17.4696 2 16.9609 2.21071 16.5858 2.58579C16.2107 2.96086 16 3.46957 16 4V7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.6119 12.524C7.3307 12.0263 6.91318 11.6193 6.40849 11.351C5.90379 11.0826 5.33293 10.964 4.76311 11.0091C4.19329 11.0543 3.64822 11.2613 3.19207 11.6057C2.73592 11.9502 2.38767 12.4178 2.18834 12.9536C1.989 13.4893 1.94686 14.0708 2.06688 14.6297C2.1869 15.1885 2.46409 15.7015 2.86581 16.1081C3.26753 16.5148 3.77706 16.7982 4.33443 16.925C4.89179 17.0518 5.47378 17.0168 6.0119 16.8239" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p>Playful bouncing animation with rotation</p>
+      </div>
+
+
+
+    </div>
+    
+    <div style="margin-top: 4rem; text-align: center;">
+      <h2>Usage Examples</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        
+        <div style="background: #3a3a3a; padding: 1.5rem; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg class="matrix-cube-rotating small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 16V8.00002C20.9996 7.6493 20.9071 7.30483 20.7315 7.00119C20.556 6.69754 20.3037 6.44539 20 6.27002L13 2.27002C12.696 2.09449 12.3511 2.00208 12 2.00208C11.6489 2.00208 11.304 2.09449 11 2.27002L4 6.27002C3.69626 6.44539 3.44398 6.69754 3.26846 7.00119C3.09294 7.30483 3.00036 7.6493 3 8.00002V16C3.00036 16.3508 3.09294 16.6952 3.26846 16.9989C3.44398 17.3025 3.69626 17.5547 4 17.73L11 21.73C11.304 21.9056 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9056 13 21.73L20 17.73C20.3037 17.5547 20.556 17.3025 20.7315 16.9989C20.9071 16.6952 20.9996 16.3508 21 16Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 4.20996L12 6.80996L16.5 4.20996" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 19.79V14.6L3 12" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12L16.5 14.6V19.79" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.27002 6.95996L12 12.01L20.73 6.95996" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 22.08V12" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Loading data...</span>
+          </div>
+        </div>
+
+        <div style="background: #3a3a3a; padding: 1.5rem; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg class="binary-code-flashing small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Binary 1s - filled rectangles -->
+              <rect x="15" y="15" width="2" height="4" fill="#00FF85"/>
+              <rect x="7" y="5" width="2" height="4" fill="#00FF85"/>
+              
+              <!-- Binary 0s - stroke paths with white fill -->
+              <path d="M18 16C18 14.8954 17.1046 14 16 14C14.8954 14 14 14.8954 14 16V18C14 19.1046 14.8954 20 16 20C17.1046 20 18 19.1046 18 18V16Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+              <path d="M10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6V8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8V6Z" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+              
+              <!-- Connecting lines -->
+              <path d="M6 20H10" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 10H18" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 14H8V20" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 4H16V10" stroke="#00FF85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Loading the matrix...</span>
+          </div>
+        </div>
+
+        <div style="background: #3a3a3a; padding: 1.5rem; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg class="white-rabbit-hopping small" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="18" y1="3" x2="18" y2="7" stroke="#00FF85" stroke-width="2"/>
+              <path d="M13 16C13.5795 15.9992 14.1467 16.1663 14.6333 16.481C15.1198 16.7958 15.5048 17.2446 15.7417 17.7735C15.9787 18.3023 16.0573 18.8884 15.9683 19.461C15.8793 20.0336 15.6263 20.5681 15.24 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 12H18.01" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 21H10C8.93913 21 7.92172 20.5786 7.17157 19.8285C6.42143 19.0783 6 18.0609 6 17C6 15.1435 6.7375 13.363 8.05025 12.0503C9.36301 10.7375 11.1435 10 13 10H13.2L9.6 6.40004C9.41615 6.21619 9.27031 5.99793 9.17081 5.75772C9.07131 5.5175 9.0201 5.26004 9.0201 5.00004C9.0201 4.47494 9.2287 3.97134 9.6 3.60004C9.9713 3.22874 10.4749 3.02014 11 3.02014C11.26 3.02014 11.5175 3.07135 11.7577 3.17085C11.9979 3.27035 12.2161 3.41619 12.4 3.60004L15.8 7.00004H16C19.3 7.00004 22 9.70004 22 13V14C22 14.5305 21.7893 15.0392 21.4142 15.4143C21.0391 15.7893 20.5304 16 20 16H19C18.2044 16 17.4413 16.3161 16.8787 16.8787C16.3161 17.4413 16 18.2044 16 19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 8.54V4C20 3.46957 19.7893 2.96086 19.4142 2.58579C19.0391 2.21071 18.5304 2 18 2C17.4696 2 16.9609 2.21071 16.5858 2.58579C16.2107 2.96086 16 3.46957 16 4V7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.6119 12.524C7.3307 12.0263 6.91318 11.6193 6.40849 11.351C5.90379 11.0826 5.33293 10.964 4.76311 11.0091C4.19329 11.0543 3.64822 11.2613 3.19207 11.6057C2.73592 11.9502 2.38767 12.4178 2.18834 12.9536C1.989 13.4893 1.94686 14.0708 2.06688 14.6297C2.1869 15.1885 2.46409 15.7015 2.86581 16.1081C3.26753 16.5148 3.77706 16.7982 4.33443 16.925C4.89179 17.0518 5.47378 17.0168 6.0119 16.8239" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Finalizing your job...</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

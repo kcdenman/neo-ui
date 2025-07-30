@@ -95,6 +95,29 @@ const config = [
       typescript({ tsconfig: './tsconfig.json' }),
     ],
   },
+  // Motion components build
+  {
+    input: 'src/motion/index.ts',
+    output: [
+      {
+        file: 'dist/motion/index.js',
+        format: 'cjs',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/motion/index.esm.js',
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    external: ['react'],
+    plugins: [
+      resolve(),
+      commonjs(),
+      svgToReact(),
+      typescript({ tsconfig: './tsconfig.json' }),
+    ],
+  },
   // TypeScript declaration files
   {
     input: 'src/index.ts',
@@ -109,6 +132,11 @@ const config = [
   {
     input: 'src/vue/index.ts',
     output: [{ file: 'dist/vue/index.d.ts', format: 'esm' }],
+    plugins: [dts()],
+  },
+  {
+    input: 'src/motion/index.ts',
+    output: [{ file: 'dist/motion/index.d.ts', format: 'esm' }],
     plugins: [dts()],
   },
 ];
